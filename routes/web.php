@@ -5,6 +5,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\FormtugasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/produk', [ProdukController::class, 'index']);
 });
 
-
-
-
+// frontend
+Route::prefix('frontend')->group(function(){
+    Route::get('/dashboard', [FrontendController::class, 'index']);
+    Route::get('/about', [FrontendController::class, 'about']);
+});
