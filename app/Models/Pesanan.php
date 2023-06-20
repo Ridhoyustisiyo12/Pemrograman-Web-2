@@ -36,4 +36,3 @@ class Pesanan extends Model
         return $alldata;
     }
 }
-
