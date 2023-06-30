@@ -1,5 +1,6 @@
 @extends('admin.layout.app')
 @section('content')
+@if (Auth::user()->role !='pelanggan')
 <div class="container-fluid px-4">
     <h1 class="mt-4">Tables</h1>
     <ol class="breadcrumb mb-4">
@@ -8,7 +9,9 @@
     </ol>
     <div class="card mb-4">
         <div class="card-header">
+            @if (Auth::user()->role == 'admin')
             <a href="{{ url('admin/produk/create') }}" class="btn btn-primary">Tambah Data</a>
+            @endif
         </div>
     <div class="card mb-4">
         <div class="card-header">
@@ -58,4 +61,8 @@
         </div>
     </div>
 </div>
+@else
+@include('admin.access_denied')
+@endif
+
 @endsection

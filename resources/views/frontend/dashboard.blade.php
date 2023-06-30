@@ -2,5 +2,5 @@
 {{-- parent --}}
 @section('content')
     {{-- nama dari halaman --}}
-    ini adalah halaman Dashboard
+    <h1 style="text-align: center">ini adalah halaman Dashboard Frontend</h1>
 @endsection

@@ -45,7 +45,7 @@ Route::get('/formtugas',[FormtugasController::class, 'index']);
 Route::post('/hasiltugas',[FormtugasController::class, 'hasil']);
 
 // admin atau backend
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth','peran:admin-manager']], function(){
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/produk', [ProdukController::class, 'index']);
